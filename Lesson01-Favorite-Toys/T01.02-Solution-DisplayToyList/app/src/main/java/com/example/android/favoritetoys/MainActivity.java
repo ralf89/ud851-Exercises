@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     // COMPLETED (1) Declare a TextView variable called mToysListTextView
     private TextView mToysListTextView;
+    
+    // Declare integer to store the number of toys listed in the "toyName" string attay
+    int nToys;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,5 +60,12 @@ public class MainActivity extends AppCompatActivity {
         for (String toyName : toyNames) {
             mToysListTextView.append(toyName + "\n\n\n");
         }
+        
+        // Store the toys array string size
+        nToys=toyNames.length;
+
+        //Set maximum line movement to enable scroll in TexView
+        mToysListTextView.setMaxLines(nToys);
+        
     }
 }
